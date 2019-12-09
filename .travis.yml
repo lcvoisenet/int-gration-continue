@@ -6,5 +6,6 @@ deploy:
   - provider: script
     script: now --token $NOW_TOKEN --public
     skip_cleanup: true
-    on:
-      branch: master
+  - on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH != 'master'
